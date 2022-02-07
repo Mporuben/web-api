@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ghcr.io/Mporuben/web-api
+        run: docker build . --file Dockerfile --tag ghcr.io/mporuben/web-api
 
       - name: Log into Github
         run:  echo ${{ secrets.GITHUB_TOKEN }} | docker login https://ghcr.io -u Mporuben --password-stdin
