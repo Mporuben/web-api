@@ -1,0 +1,25 @@
+name: Docker Image release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag ghcr.io/Mporubenweb-api
+
+      - name: Log into Github
+        run:  echo ${{ secrets.GITHUB_TOKEN }} | docker login https://ghcr.io -u Mporuben --password-stdin
+
+      - name: Push image to registry
+        run: |
+          IMAGE_ID=ghcr.io/Mporubenweb-api:latest
+          docker push $IMAGE_ID
