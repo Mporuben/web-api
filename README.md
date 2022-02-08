@@ -1,5 +1,5 @@
 # THIS REPO SERVES ONLY AS EXAMPLE FOR ARTICLE
-[Article link](matthewporuben.com/blog/building-development-repo)
+[Article link](http://www.matthewporuben.com/blog/building-development-repo)
 
 ## Setup
 ```bash
